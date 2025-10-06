@@ -6,7 +6,6 @@ from google.genai.types import GenerateContentConfig
 import os
 
 from .prompts import INSTRUCTION
-from ..google_search.agent import search_tool
 
 HUBSPOT_ACCESS_TOKEN = os.getenv("HUBSPOT_ACCESS_TOKEN")
 
@@ -17,6 +16,7 @@ hubspot_agent = Agent(
         "Agent to answer questions about HubSpot."
     ),
     instruction=(INSTRUCTION),
+    output_key="hubspot_results",
     tools=[
         MCPToolset(
             connection_params=StdioConnectionParams(
@@ -35,8 +35,7 @@ hubspot_agent = Agent(
             ),
             # You can filter for specific Maps tools if needed:
             # tool_filter=['get_directions', 'find_place_by_id']
-        ),
-        search_tool
+        )
     ],
     generate_content_config=GenerateContentConfig(
         temperature=0.0, top_p=0.5

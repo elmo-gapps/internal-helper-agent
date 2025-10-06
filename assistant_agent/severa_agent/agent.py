@@ -17,6 +17,7 @@ severa_agent = Agent(
         "Agent to answer questions about Severa."
     ),
     instruction=(INSTRUCTION),
+    output_key="severa_results",
     tools=[
         MCPToolset(
             connection_params=StdioConnectionParams(

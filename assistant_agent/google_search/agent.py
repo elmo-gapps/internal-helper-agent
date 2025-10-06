@@ -9,6 +9,7 @@ search_agent = Agent(
     model="gemini-2.5-flash",
     description="Agent to answer questions using Google Search.",
     instruction=INSTRUCTION,
+    output_key="google_search_results",
     tools=[google_search]
 )
 
