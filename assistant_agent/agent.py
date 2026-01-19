@@ -10,5 +10,5 @@ root_agent = Agent(
     model="gemini-2.5-flash",
     global_instruction=GLOBAL_INSTRUCTION,
     instruction=INSTRUCTION,
-    sub_agents=[hubspot_agent, severa_agent, search_agent]
+    sub_agents=[hubspot_agent(), severa_agent()]
 )

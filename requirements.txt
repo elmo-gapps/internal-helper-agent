@@ -1,5 +1,5 @@
 hubspot-api-client
-google-adk
+google-cloud-aiplatform[adk,agent_engines]>=1.111
 uvicorn 
 fastmcp
 python-dotenv
